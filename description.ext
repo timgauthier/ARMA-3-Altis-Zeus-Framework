@@ -33,9 +33,8 @@ class Params
 	class ViewDistance
 	{
 		title = "View distance (in metres)";
-		values[] = {500,1000,2000,5000};
+		values[] = {500,1000,2000,,3000,4000,5000,6000};
 		// When 'texts' are missing, values will be displayed directly instead
-		default = 1000;
-		file = "setViewDistance.sqf"; // (Optional) Script called when player joins, selected value is passed as an argument
+		default = 3000;
 	};
 };
