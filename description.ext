@@ -1,0 +1,41 @@
+OnLoadMission = "Virtual Ammobox System";
+respawn = BASE;
+respawndelay = 10;
+disabledAI = true;
+enableDebugConsole = 1;
+
+#include "VAS\menu.hpp"
+
+class CfgFunctions
+{
+	#include "VAS\cfgfunctions.hpp"
+};
+
+
+class Params
+{
+	class AISkill
+	{
+		title = "AI Skill"; // Param name visible in the list
+		values[] = {0.2,0.6,1}; // Description of each selectable item
+		texts[] = {"Recruit","Regular","Veteran"}; // Values; must be integers; has to have the same number of elements as 'texts'
+		default = 0.6; // Default value; must be listed in 'values' array, otherwise 0 is used
+	};
+	class Daytime
+	{
+		title = "Time of Day";
+		texts[] = {"Morning","Day","Evening","Night"};
+		values[] = {5,9,18,20};
+		default = 5;
+		function = "BIS_fnc_paramDaytime"; // (Optional) Function called when player joins, selected value is passed as an argument
+ 		isGlobal = 1; // (Optional) 1 to execute script / function locally for every player who joins, 0 to do it only on server
+	};
+	class ViewDistance
+	{
+		title = "View distance (in metres)";
+		values[] = {500,1000,2000,5000};
+		// When 'texts' are missing, values will be displayed directly instead
+		default = 1000;
+		file = "setViewDistance.sqf"; // (Optional) Script called when player joins, selected value is passed as an argument
+	};
+};
