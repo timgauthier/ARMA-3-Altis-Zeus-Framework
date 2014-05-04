@@ -1,4 +1,4 @@
-OnLoadMission = "Virtual Ammobox System";
+OnLoadMission = "Altis Zeus Framework";
 respawn = BASE;
 respawndelay = 10;
 disabledAI = true;
